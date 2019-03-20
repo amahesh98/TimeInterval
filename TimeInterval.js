@@ -51,3 +51,5 @@ function createOutputString(hour, min) {
 
   return outputStr;
 }
+
+export default createTimes;
