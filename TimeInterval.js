@@ -1,4 +1,4 @@
-function create(start, finish) {
+function create(start, finish, interval) {
   const output = [];
   const openHour = parseInt(start.substring(0, 2), 10);
   const closeHour = parseInt(finish.substring(0, 2), 10);
@@ -7,22 +7,22 @@ function create(start, finish) {
 
   // Need to do first hour and last hour separately
   if (openHour !== closeHour) {
-    for (let i = openMin; i < 60; i += 15) {
+    for (let i = openMin; i < 60; i += interval) {
       output.push(createOutputString(openHour, i));
     }
   } else {
-    for (let i = openMin; i <= closeMin; i += 15) {
+    for (let i = openMin; i <= closeMin; i += interval) {
       output.push(createOutputString(openHour, i));
     }
   }
 
   for (let i = openHour + 1; i < closeHour; i++) {
-    for (let j = 0; j < 60; j += 15) {
+    for (let j = 0; j < 60; j += interval) {
       output.push(createOutputString(i, j));
     }
   }
 
-  for (let i = 0; i <= closeMin; i += 15) {
+  for (let i = 0; i <= closeMin; i += interval) {
     output.push(createOutputString(closeHour, i));
   }
   return output;
