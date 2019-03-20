@@ -1,4 +1,4 @@
-function createTimes(start, finish) {
+function create(start, finish) {
   const output = [];
   const openHour = parseInt(start.substring(0, 2), 10);
   const closeHour = parseInt(finish.substring(0, 2), 10);
@@ -52,4 +52,4 @@ function createOutputString(hour, min) {
   return outputStr;
 }
 
-export default createTimes;
+export default create;
